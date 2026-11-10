@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#241b47">
+  <title>PonyBuy spreadsheet | Productlinks, maten en QC-foto’s</title>
+  <meta name="description" content="Gebruik deze PonyBuy spreadsheet-gids om sneakers, kleding en accessoires te vinden. Vergelijk productlinks, maten, QC-foto’s en verzendkosten.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="nl_NL">
+  <meta property="og:title" content="PonyBuy spreadsheet | Productlinks, maten en QC-foto’s">
+  <meta property="og:description" content="Begin bij tien categorieën en lees hoe je een productlink, maat, magazijnfoto en verzendraming controleert.">
+  <!--
+  Zoekonderzoek: Bing, zoekopdracht PonyBuy spreadsheet, Nederlandse interface.
+  Tien organische resultaten, in volgorde, met geparafraseerde onderwerpen.
+  Waar een pagina onbereikbaar was, is de Bing-vermelding gebruikt:
+  1. w2cspreadsheet.com/agents/ponybuy — aankoopagent, magazijn en kosten
+  2. maisonlooks.com/en/spreadsheet/ponybuy — productvondsten en bestelproces
+  3. www.qqsheet.com/agents/ponyBuy — Weidian, Taobao en 1688
+  4. cnbuyspreadsheet.github.io/PonyBuy-Spreadsheet/ — W2C-links en QC
+  5. ponybuyspreadsheet.org/ — maten, QC-foto’s en verzending
+  6. ponybuy.it/ — aanbieders, controlefoto’s en bestelstappen
+  7. ponybuyfind.com/ — varianten, afmetingen en retourproces
+  8. ponybuyspreadsheets.com/ — productlinks, categorieën en verzending
+  9. ponybuyspreadsheet.store/ — modecategorieën, sneakers en accessoires
+  10. repglide.github.io/ponybuy-spreadsheet/ — productcategorieën en shortlist
+  Secundaire zoektermen: PonyBuy productlinks, PonyBuy QC-foto’s, PonyBuy maatgids,
+  PonyBuy verzendkosten.
+  Longtail-zoektermen: PonyBuy spreadsheet voor beginners, PonyBuy sneakers zoeken,
+  PonyBuy kleding vergelijken, PonyBuy accessoires zoeken, PonyBuy productlink controleren,
+  originele Weidian-link vinden, Taobao productvariant kiezen, 1688 minimale afname controleren,
+  W2C-links vergelijken, PonyBuy product-ID bewaren, sneakermaat in centimeters,
+  binnenzoollengte opmeten, EU-schoenmaat vergelijken, borstbreedte van een hoodie meten,
+  mouwlengte van een jas vergelijken, taillebreedte van een broek meten,
+  maat van een pet controleren, lengte van een armband controleren, PonyBuy magazijnfoto’s bekijken,
+  foto van een maatlabel aanvragen, naden op QC-foto’s controleren, kleurverschil op productfoto’s beoordelen,
+  PonyBuy verzendkosten naar Nederland, PonyBuy verzending naar België, volumetrisch gewicht berekenen,
+  totaalprijs in euro’s vergelijken, PonyBuy pakket samenvoegen, retourtermijn bij de verkoper controleren.
+  -->
+  <style>
+    :root{color-scheme:light;--ink:#241b47;--muted:#534c64;--paper:#f7f5fc;--white:#fff;--line:#ded8eb;--lime:#ddf77b;--lav:#ece5ff}
+    *,*::before,*::after{box-sizing:border-box}
+    body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+    a{color:inherit}
+    a:focus-visible,summary:focus-visible{outline:3px solid #7549c1;outline-offset:4px}
+    .wrap{width:min(72rem,calc(100% - 2rem));margin-inline:auto}
+    .mast{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:1rem}
+    .brand{font-weight:850;text-decoration:none;overflow-wrap:anywhere}
+    .tag,.eyebrow{font-size:.76rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
+    .tag{color:var(--muted);text-align:right}
+    h1,h2,h3,p,figure{margin:0}
+    h1,h2,h3{line-height:1.1;text-wrap:balance}
+    h1{max-width:11ch;font-size:clamp(2.65rem,7.2vw,5.5rem);letter-spacing:-.075em}
+    h2{font-size:clamp(1.65rem,4vw,2.65rem);letter-spacing:-.045em}
+    h3{font-size:1.24rem;letter-spacing:-.025em}
+    p+p{margin-top:.7rem}
+    .hero{display:grid;grid-template-columns:1.16fr 1fr;overflow:hidden;border-radius:1.25rem;background:var(--ink);color:var(--white)}
+    .intro{padding:clamp(1.35rem,5vw,4.2rem);align-self:center}
+    .hero .eyebrow{color:var(--lime);margin-bottom:.8rem}
+    .lead{max-width:38ch;margin-top:1.1rem;color:#f0eaff}
+    .button{display:inline-flex;align-items:center;min-height:2.8rem;margin-top:1.3rem;padding:.55rem 1rem;border-radius:.55rem;background:var(--lime);color:var(--ink);font-weight:800;text-decoration:none}
+    .button:hover{background:#f1ffbb}
+    .hero figure{display:grid;grid-template-rows:1fr auto;min-width:0;background:var(--lav);color:var(--ink)}
+    .hero img{display:block;width:100%;height:100%;min-height:0;aspect-ratio:4/3;object-fit:cover}
+    .hero figcaption{padding:.55rem .9rem;font-size:.82rem}
+    .section{margin-block:clamp(2.35rem,6vw,4.4rem)}
+    .heading{margin-bottom:1.1rem}
+    .heading .eyebrow{margin-bottom:.35rem;color:var(--muted)}
+    .heading p:last-child{margin-top:.5rem}
+    .categories,.gallery,.costs{margin:0;padding:0;list-style:none}
+    .categories{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.6rem}
+    .categories a{display:grid;min-height:4.45rem;padding:.7rem .75rem;background:var(--white);border:1px solid var(--line);border-radius:.6rem;text-decoration:none;font-weight:750}
+    .categories a:hover{background:var(--lime);border-color:var(--ink)}
+    .categories span{font-size:.76rem;font-variant-numeric:tabular-nums;color:var(--muted)}
+    .gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.8rem}
+    .gallery figure{height:100%;overflow:hidden;border:1px solid var(--line);border-radius:.75rem;background:var(--white)}
+    .gallery img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:contain;background:var(--lav)}
+    .gallery figcaption{padding:.6rem .75rem;font-size:.9rem;font-weight:700}
+    .articles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem}
+    article{padding:1.2rem;border:1px solid var(--line);border-radius:.75rem;background:var(--white)}
+    article .eyebrow{display:inline-block;margin-bottom:.55rem;padding:.14rem .45rem;border-radius:.22rem;background:var(--lav)}
+    article p{margin-top:.7rem}
+    .costs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.9rem;margin-top:1rem}
+    .costs li{padding:.85rem 1rem;border-left:3px solid #7549c1;background:var(--lav)}
+    .costs strong{display:block}
+    .faq{max-width:52rem}
+    details{border-top:1px solid var(--line)}
+    details:last-of-type{border-bottom:1px solid var(--line)}
+    summary{padding:.9rem .25rem;cursor:pointer;font-weight:780}
+    details p{max-width:68ch;padding:0 .25rem .9rem}
+    footer{padding-block:1.4rem 2rem;border-top:1px solid var(--line);color:var(--muted)}
+    footer p,footer details{font-size:.85rem}
+    footer details{margin-top:.75rem}
+    footer p{overflow-wrap:anywhere}
+    @media(max-width:58rem){.categories{grid-template-columns:repeat(4,minmax(0,1fr))}.articles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:43rem){.hero,.articles,.costs{grid-template-columns:1fr}.hero img{aspect-ratio:16/9}.categories,.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "nl",
+    "name": "PonyBuy spreadsheet",
+    "description": "Nederlandstalige gids voor het vergelijken van productlinks, maten, QC-foto’s en verzendkosten.",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Wat is een PonyBuy spreadsheet?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Een PonyBuy spreadsheet is een overzicht van productlinks, vaak ingedeeld op artikeltype. Gebruik het om opties te vergelijken en controleer daarna de actuele aanbieding op de oorspronkelijke productpagina."}
+      },
+      {
+        "@type": "Question",
+        "name": "Waar controleer ik een PonyBuy productlink?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Open de oorspronkelijke aanbieding en vergelijk het product-ID, de verkoper, de kleur en de maat met je selectie. Bekijk bij een 1688-aanbieding ook de minimale afname."}
+      },
+      {
+        "@type": "Question",
+        "name": "Welke QC-foto’s zijn handig bij sneakers?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Vraag om een foto van het maatlabel, beide schoenen naast elkaar en de binnenzool met een meetlint. Gebruik die foto’s voor zichtbare details en afmetingen. Voor authenticiteit is afzonderlijke verificatie nodig."}
+      },
+      {
+        "@type": "Question",
+        "name": "Hoe vergelijk ik verzendkosten naar Nederland of België?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Vraag voor jouw bestemming een raming op basis van het verpakte gewicht en de doosafmetingen. Vergelijk per verzendoptie het gebruikte rekengewicht en controleer welke toeslagen in de raming zijn inbegrepen."}
+      },
+      {
+        "@type": "Question",
+        "name": "Zijn de merkfoto’s op deze pagina productaanbiedingen?",
+        "acceptedAnswer": {"@type": "Answer", "text": "De merkfoto’s zijn stijlvoorbeelden. Controleer de eigen productpagina van een aanbieder voor informatie over voorraad, prijs en uitvoering."}
+      }
+    ]
+  }
+  </script>
+<link rel="canonical" href="https://kakobuyfinds.github.io/hqsyn/">
+</head>
+<body>
+  <header class="mast wrap">
+    <a class="brand" href="https://www.hipobuyfind.com">www.hipobuyfind.com</a>
+    <span class="tag">Nederlandstalige koopgids</span>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="intro">
+        <p class="eyebrow">Sneakers · kleding · accessoires</p>
+        <h1 id="page-title">PonyBuy spreadsheet</h1>
+        <p class="lead">Begin met een categorie en maak een shortlist. Controleer daarna per artikel de originele productlink, de gekozen maat en de foto’s van de kwaliteitscontrole (QC).</p>
+        <a class="button" href="https://www.hipobuyfind.com">Bekijk het HipobuyFind-overzicht</a>
+      </div>
+      <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Nike_air_Force_1_white_on_white.jpg/960px-Nike_air_Force_1_white_on_white.jpg"
+             srcset="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Nike_air_Force_1_white_on_white.jpg/330px-Nike_air_Force_1_white_on_white.jpg 330w, https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Nike_air_Force_1_white_on_white.jpg/960px-Nike_air_Force_1_white_on_white.jpg 960w"
+             sizes="(max-width: 43rem) calc(100vw - 2rem), (max-width: 74rem) 46vw, 34rem"
+             width="960" height="720" alt="Witte Nike Air Force 1-sneakers" loading="eager" fetchpriority="high" decoding="async">
+        <figcaption>Stijlvoorbeeld · Nike Air Force 1</figcaption>
+      </figure>
+    </section>
+
+    <nav class="section" aria-labelledby="category-title">
+      <div class="heading">
+        <p class="eyebrow">De categorie-index</p>
+        <h2 id="category-title">Waar ben je naar op zoek?</h2>
+      </div>
+      <ul class="categories">
+        <li><a href="https://hipobuyfind.com/category-911-Shoes.html"><span aria-hidden="true">01</span>Schoenen</a></li>
+        <li><a href="https://hipobuyfind.com/category-912-Hoodies%2FSweaters.html"><span aria-hidden="true">02</span>Hoodies en truien</a></li>
+        <li><a href="https://hipobuyfind.com/category-913-T-Shirts.html"><span aria-hidden="true">03</span>T-shirts</a></li>
+        <li><a href="https://hipobuyfind.com/category-914-Jackets.html"><span aria-hidden="true">04</span>Jassen</a></li>
+        <li><a href="https://hipobuyfind.com/category-915-Pants%2FShorts.html"><span aria-hidden="true">05</span>Broeken en shorts</a></li>
+        <li><a href="https://hipobuyfind.com/category-916-Headwear.html"><span aria-hidden="true">06</span>Petten en mutsen</a></li>
+        <li><a href="https://hipobuyfind.com/category-917-Sets.html"><span aria-hidden="true">07</span>Sets</a></li>
+        <li><a href="https://hipobuyfind.com/category-918-underwear%2Funderpants.html"><span aria-hidden="true">08</span>Ondergoed</a></li>
+        <li><a href="https://hipobuyfind.com/category-919-Jersey.html"><span aria-hidden="true">09</span>Sportshirts</a></li>
+        <li><a href="https://hipobuyfind.com/category-920-Accessories.html"><span aria-hidden="true">10</span>Accessoires</a></li>
+      </ul>
+    </nav>
+
+    <section class="section" aria-labelledby="style-title">
+      <div class="heading">
+        <p class="eyebrow">Stijlreferenties</p>
+        <h2 id="style-title">Van jas tot sieraad</h2>
+        <p>Gebruik de foto’s om te bepalen welke details je wilt vergelijken, zoals de sluiting van een jas, de vorm van een pet of de breedte van een armband.</p>
+      </div>
+      <ul class="gallery">
+        <li><figure>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Jacket_by_Dior.jpg/500px-Jacket_by_Dior.jpg" width="500" height="667" alt="Jas ontworpen door Dior" loading="lazy" decoding="async">
+          <figcaption>Dior · Jas</figcaption>
+        </figure></li>
+        <li><figure>
+          <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Young_man_with_short_black_hair_wearing_Gucci_cap_from_behind.jpg/500px-Young_man_with_short_black_hair_wearing_Gucci_cap_from_behind.jpg" width="500" height="533" alt="Gucci-pet gedragen door een persoon van achteren gezien" loading="lazy" decoding="async">
+          <figcaption>Gucci · Pet</figcaption>
+        </figure></li>
+        <li><figure>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Louis_Vuitton_Bag_%282523153428%29.jpg/330px-Louis_Vuitton_Bag_%282523153428%29.jpg" width="330" height="561" alt="Louis Vuitton-tas" loading="lazy" decoding="async">
+          <figcaption>Louis Vuitton · Tas</figcaption>
+        </figure></li>
+        <li><figure>
+          <img src="https://assets.hermes.com/is/image/hermesproduct/700001FP01_front_wm_101?%24product_default_bg%24=&amp;wid=500" width="500" height="667" alt="Zwarte Hermès Clic H-armband met zilverkleurige H-sluiting" loading="lazy" decoding="async">
+          <figcaption>Hermès · Clic H-armband</figcaption>
+        </figure></li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="guides-title">
+      <div class="heading">
+        <p class="eyebrow">Drie korte gidsen</p>
+        <h2 id="guides-title">Van zoekresultaat naar shortlist</h2>
+      </div>
+      <div class="articles">
+        <article>
+          <span class="eyebrow">01 · Productlinks</span>
+          <h3>Controleer welk artikel achter de link zit</h3>
+          <p>Noteer bij het vergelijken van PonyBuy productlinks de oorspronkelijke Weidian-, Taobao- of 1688-link, het product-ID en de verkoper. Bewaar ook de gekozen kleur en maat. Een algemene productlink kan bij het opnieuw openen een andere variant tonen.</p>
+          <p>Zie je meerdere W2C-links voor hetzelfde model? Vergelijk de variant en de verkoopvoorwaarden. Controleer bij 1688 of er een minimale afname geldt en kijk vóór betaling naar de retourtermijn van de verkoper.</p>
+        </article>
+        <article>
+          <span class="eyebrow">02 · Maatgids</span>
+          <h3>Meet een artikel dat je al draagt</h3>
+          <p>Voor sneakers is de binnenzoollengte in centimeters een nuttig vergelijkingspunt naast de EU-schoenmaat. Meet een passende schoen en controleer of de verkoper de binnenzool of de aanbevolen voetlengte opgeeft.</p>
+          <p>Leg een passende hoodie plat en meet de borstbreedte van oksel tot oksel. Noteer bij een jas ook de mouwlengte, bij een broek de platte taillebreedte en bij een verstelbare pet het bereik van de hoofdomtrek. Vergelijk bij armbanden je polsomtrek met het meetadvies van de aanbieder.</p>
+        </article>
+        <article>
+          <span class="eyebrow">03 · Magazijncontrole</span>
+          <h3>Vraag een QC-foto die je vraag beantwoordt</h3>
+          <p>Gebruik PonyBuy QC-foto’s om het maatlabel, de naden of een ritssluiting te controleren. Twijfel je over een schoenmaat, vraag dan een foto waarop het begin en einde van het meetlint zichtbaar zijn.</p>
+          <p>Bij een vermoedelijk kleurverschil helpt een extra foto bij neutraal licht. Noteer welke variant op de foto staat en vraag bij een afwijking naar de retour- of omruilprocedure voordat je het pakket laat versturen.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="shipping-title">
+      <div class="heading">
+        <p class="eyebrow">Nederland en België</p>
+        <h2 id="shipping-title">Vergelijk de totaalprijs in euro’s</h2>
+        <p>Maak voor elke verzendoptie een aparte raming. Wil je artikelen samenvoegen, vraag dan naar de afmetingen en het gewicht van het complete pakket.</p>
+      </div>
+      <ul class="costs">
+        <li><strong>Artikel en service</strong> Noteer de prijs van de gekozen variant, eventuele servicekosten en binnenlandse bezorging naar het magazijn.</li>
+        <li><strong>Internationaal vervoer</strong> Controleer of de vervoerder rekent met werkelijk of volumetrisch gewicht. Gebruik de koers die bij de betaling geldt.</li>
+        <li><strong>Kosten bij levering</strong> Controleer welke belastingen, invoer- of afhandelingskosten al in de prijs zitten en welke eventueel later volgen.</li>
+      </ul>
+    </section>
+
+    <section class="section faq" aria-labelledby="faq-title">
+      <div class="heading">
+        <p class="eyebrow">Korte antwoorden</p>
+        <h2 id="faq-title">Veelgestelde vragen</h2>
+      </div>
+      <details open>
+        <summary>Wat is een PonyBuy spreadsheet?</summary>
+        <p>Een PonyBuy spreadsheet is een overzicht van productlinks, vaak ingedeeld op artikeltype. Gebruik het om opties te vergelijken en controleer daarna de actuele aanbieding op de oorspronkelijke productpagina.</p>
+      </details>
+      <details>
+        <summary>Waar controleer ik een PonyBuy productlink?</summary>
+        <p>Open de oorspronkelijke aanbieding en vergelijk het product-ID, de verkoper, de kleur en de maat met je selectie. Bekijk bij een 1688-aanbieding ook de minimale afname.</p>
+      </details>
+      <details>
+        <summary>Welke QC-foto’s zijn handig bij sneakers?</summary>
+        <p>Vraag om een foto van het maatlabel, beide schoenen naast elkaar en de binnenzool met een meetlint. Gebruik die foto’s voor zichtbare details en afmetingen. Voor authenticiteit is afzonderlijke verificatie nodig.</p>
+      </details>
+      <details>
+        <summary>Hoe vergelijk ik verzendkosten naar Nederland of België?</summary>
+        <p>Vraag voor jouw bestemming een raming op basis van het verpakte gewicht en de doosafmetingen. Vergelijk per verzendoptie het gebruikte rekengewicht en controleer welke toeslagen in de raming zijn inbegrepen.</p>
+      </details>
+      <details>
+        <summary>Zijn de merkfoto’s op deze pagina productaanbiedingen?</summary>
+        <p>De merkfoto’s zijn stijlvoorbeelden. Controleer de eigen productpagina van een aanbieder voor informatie over voorraad, prijs en uitvoering.</p>
+      </details>
+      <a class="button" href="https://www.hipobuyfind.com">Blader door HipobuyFind</a>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <p>Onafhankelijke koopgids. De categorieën verwijzen naar HipobuyFind. Merknamen identificeren de afgebeelde stijlvoorbeelden.</p>
+    <details>
+      <summary>Fotocredits</summary>
+      <p>Nike Air Force 1 · HI 622. Dior-jas · DavidLawley. Gucci-pet · Alex Neman. Wikimedia Commons, CC BY-SA 4.0 (creativecommons.org/licenses/by-sa/4.0/). De Nike-foto kan op kleine schermen worden bijgesneden.</p>
+      <p>Louis Vuitton-tas · Sandra Cohen-Rose en Colin Rose. Wikimedia Commons, CC BY-SA 2.0 (creativecommons.org/licenses/by-sa/2.0/).</p>
+      <p>Hermès Clic H-armband · productfoto van Hermès.</p>
+    </details>
+  </footer>
+</body>
+</html>
